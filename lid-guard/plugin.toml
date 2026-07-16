@@ -2,6 +2,7 @@ id = "8bury/lid-guard"
 name = "Lid Guard"
 version = "1.0.0"
 min_noctalia = "5.0.0"
+plugin_api = 3
 author = "8bury"
 license = "MIT"
 icon = "shield-lock"
