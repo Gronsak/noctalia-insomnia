@@ -1,6 +1,6 @@
 --!nonstrict
 
-local status = noctalia.state.get("lid_guard_status") or {
+local status = noctalia.state.get("insomnia_status") or {
   active = false,
   busy = false,
   available = true,
@@ -15,7 +15,7 @@ local function render()
   shortcut.setEnabled(status.available ~= false and status.busy ~= true)
 end
 
-noctalia.state.watch("lid_guard_status", function(value)
+noctalia.state.watch("insomnia_status", function(value)
   if type(value) == "table" then
     status = value
     render()
@@ -27,7 +27,7 @@ render()
 function onClick()
   if status.available == false or status.busy == true then return end
   requestId += 1
-  noctalia.state.set("lid_guard_command", {
+  noctalia.state.set("insomnia_command", {
     action = "toggle",
     requestId = `shortcut-{requestId}`,
   })

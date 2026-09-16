@@ -2,14 +2,14 @@
 -- Owns the systemd inhibitor. Widgets and shortcuts communicate with this
 -- singleton through noctalia.state.
 
-local UNIT = "noctalia-lid-guard.service"
+local UNIT = "noctalia-insomnia.service"
 local CHECK_COMMAND = `systemctl --user is-active --quiet {UNIT}`
 local START_COMMAND = `systemctl --user reset-failed {UNIT} >/dev/null 2>&1 || true; ` .. table.concat({
   `systemd-run --user --quiet --collect --unit={UNIT}`,
-  `--description='Noctalia Lid Guard'`,
+  `--description='Noctalia Insomnia'`,
   `systemd-inhibit --what=handle-lid-switch`,
-  `--who='Noctalia Lid Guard'`,
-  `--why='Keep background jobs running while the laptop lid is closed'`,
+  `--who='Noctalia Insomnia'`,
+  `--why='Stop computer from sleeping'`,
   `--mode=block sleep infinity`,
 }, " ")
 local STOP_COMMAND = `systemctl --user stop {UNIT}`
@@ -23,7 +23,7 @@ local revision = 0
 
 local function publish(errorMessage)
   revision += 1
-  noctalia.state.set("lid_guard_status", {
+  noctalia.state.set("insomnia_status", {
     active = active,
     busy = busy,
     available = available,
@@ -88,7 +88,7 @@ local function setActive(nextActive)
   end
 end
 
-noctalia.state.watch("lid_guard_command", function(command)
+noctalia.state.watch("insomnia_command", function(command)
   if type(command) ~= "table" then return end
 
   if command.action == "toggle" then

@@ -1,0 +1,28 @@
+{
+  "error": {
+    "missing_systemd": "systemctl, systemd-run, and systemd-inhibit are required.",
+    "command_failed": "The systemd command failed.",
+    "state_mismatch": "The requested state could not be confirmed."
+  },
+  "notification": {
+    "enabled": {
+      "title": "Insomnia enabled",
+      "body": "The computer will not sleep."
+    },
+    "disabled": {
+      "title": "Insomnia disabled",
+      "body": "The normal sleep schedule restored."
+    }
+  },
+  "shortcut": {
+    "active": "Insomnia On",
+    "inactive": "Insomnia Off"
+  },
+  "title": "Insomnia",
+  "tooltip": {
+    "active": "Insomnia is on — the computer will not sleep",
+    "inactive": "Insomnia is on — the computer will sleep as normal",
+    "changing": "Changing Insomnia state…",
+    "unavailable": "Insomnia requires systemd"
+  }
+}

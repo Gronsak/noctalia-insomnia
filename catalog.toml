@@ -1,13 +1,13 @@
 [[plugin]]
-id = "8bury/lid-guard"
-name = "Lid Guard"
+id = "gronsak/insomnia"
+name = "Insomnia"
 version = "1.0.0"
-author = "8bury"
+author = "Gronsak"
 license = "MIT"
 icon = "shield-lock"
-description = "Keep the laptop awake when its lid is closed, so background jobs can continue running."
+description = "Keep the computer awake, so background jobs can continue running."
 deprecated = false
 min_noctalia = "5.0.0"
 plugin_api = 3
 tags = ["bar", "shortcut", "system", "productivity", "utility"]
-dependencies = []
+dependencies = ["systemctl", "systemd-run", "systemd-inhibit", "sleep"]

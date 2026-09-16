@@ -1,6 +1,6 @@
 --!nonstrict
 
-local status = noctalia.state.get("lid_guard_status") or {
+local status = noctalia.state.get("insomnia_status") or {
   active = false,
   busy = false,
   available = true,
@@ -9,7 +9,7 @@ local requestId = 0
 
 local function render()
   if status.available == false then
-    barWidget.setGlyph("shield-x")
+    barWidget.setGlyph("bed-off")
     barWidget.setGlyphColor("error")
     barWidget.setTooltip(noctalia.tr("tooltip.unavailable"))
   elseif status.busy == true then
@@ -17,7 +17,7 @@ local function render()
     barWidget.setGlyphColor("primary")
     barWidget.setTooltip(noctalia.tr("tooltip.changing"))
   elseif status.active == true then
-    barWidget.setGlyph("shield-lock")
+    barWidget.setGlyph("bed")
     barWidget.setGlyphColor("tertiary")
     barWidget.setTooltip(noctalia.tr("tooltip.active"))
   else
@@ -27,7 +27,7 @@ local function render()
   end
 end
 
-noctalia.state.watch("lid_guard_status", function(value)
+noctalia.state.watch("insomnia_status", function(value)
   if type(value) == "table" then
     status = value
     render()
@@ -44,7 +44,7 @@ function onClick()
   if status.busy == true then return end
 
   requestId += 1
-  noctalia.state.set("lid_guard_command", {
+  noctalia.state.set("insomnia_command", {
     action = "toggle",
     requestId = `widget-{requestId}`,
   })
@@ -52,7 +52,7 @@ end
 
 function onRightClick()
   requestId += 1
-  noctalia.state.set("lid_guard_command", {
+  noctalia.state.set("insomnia_command", {
     action = "refresh",
     requestId = `widget-refresh-{requestId}`,
   })

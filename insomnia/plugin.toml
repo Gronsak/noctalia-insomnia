@@ -1,23 +1,23 @@
-id = "8bury/lid-guard"
-name = "Lid Guard"
+id = "gronsak/insomnia"
+name = "Insomnia"
 version = "1.0.0"
 min_noctalia = "5.0.0"
 plugin_api = 3
-author = "8bury"
+author = "gronsak"
 license = "MIT"
 icon = "shield-lock"
 description = "Keep the laptop awake when its lid is closed, so background jobs can continue running."
 tags = ["bar", "shortcut", "system", "productivity", "utility"]
-dependencies = []
+dependencies = ["systemctl", "systemd-run", "systemd-inhibit", "sleep"]
 
 [[service]]
-id = "lid-guard-service"
+id = "insomnia-service"
 entry = "service.luau"
 
 [[widget]]
-id = "lid-guard"
+id = "insomnia"
 entry = "widget.luau"
 
 [[shortcut]]
-id = "lid-guard-toggle"
+id = "insomnia-toggle"
 entry = "shortcut.luau"
