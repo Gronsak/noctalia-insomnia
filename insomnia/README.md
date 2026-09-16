@@ -38,7 +38,7 @@ Lock & Suspend is called but not suspend after.
 Add this repository as a plugin source and enable Insomnia:
 
 ```sh
-noctalia msg plugins source add insomnia git https://github.com/gronsak/noctalia-insomnia.git
+noctalia msg plugins source add insomnia git https://github.com/gronsak/noctalia-plugins.git
 noctalia msg plugins enable gronsak/insomnia
 ```
 
