@@ -3,8 +3,8 @@
 ## Acknowledgement
 
 Insomnia is based on [8bury/noctalia-lid-guard](https://github.com/8bury/noctalia-lid-guard)
-but with the intent to inhibit sleep on any computer not just laptops and not
-just when the screen closes.
+but with the intent to inhibit sleep on any computer not just laptops and adding
+more granular controls of the behavior in the future.
 
 ## Description
 
