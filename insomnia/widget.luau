@@ -9,7 +9,7 @@ local requestId = 0
 
 local function render()
   if status.available == false then
-    barWidget.setGlyph("bed-off")
+    barWidget.setGlyph("alert-triangle")
     barWidget.setGlyphColor("error")
     barWidget.setTooltip(noctalia.tr("tooltip.unavailable"))
   elseif status.busy == true then
@@ -17,11 +17,11 @@ local function render()
     barWidget.setGlyphColor("primary")
     barWidget.setTooltip(noctalia.tr("tooltip.changing"))
   elseif status.active == true then
-    barWidget.setGlyph("bed")
+    barWidget.setGlyph("bed-off")
     barWidget.setGlyphColor("tertiary")
     barWidget.setTooltip(noctalia.tr("tooltip.active"))
   else
-    barWidget.setGlyph("shield-off")
+    barWidget.setGlyph("bed")
     barWidget.setGlyphColor("on_surface_variant")
     barWidget.setTooltip(noctalia.tr("tooltip.inactive"))
   end
