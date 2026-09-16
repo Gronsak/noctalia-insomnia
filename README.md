@@ -1,6 +1,6 @@
 # Noctalia Plugins
 
-This is a collection of plugins for Noctalia v5 with different purposes.
+This is a collection of plugins for Noctalia v5 with different purposes that is in development.
 
 ## Installation
 
