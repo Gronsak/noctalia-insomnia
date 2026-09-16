@@ -1,7 +1,7 @@
 [[plugin]]
 id = "gronsak/insomnia"
 name = "Insomnia"
-version = "1.0.1"
+version = "1.0.2"
 author = "Gronsak"
 license = "MIT"
 icon = "shield-lock"
@@ -10,4 +10,4 @@ deprecated = false
 min_noctalia = "5.0.0"
 plugin_api = 3
 tags = ["bar", "shortcut", "system", "productivity", "utility"]
-dependencies = ["systemctl", "systemd-run", "systemd-inhibit", "sleep"]
+dependencies = []
