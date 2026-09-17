@@ -10,7 +10,7 @@ local requestId = 0
 local function render()
   local active = status.active == true
   shortcut.setLabel(if active then noctalia.tr("shortcut.active") else noctalia.tr("shortcut.inactive"))
-  shortcut.setIcon("shield-lock", "shield-off")
+  shortcut.setIcon("bed", "bed-off")
   shortcut.setActive(active)
   shortcut.setEnabled(status.available ~= false and status.busy ~= true)
 end
